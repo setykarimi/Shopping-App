@@ -1,18 +1,18 @@
 import styles from './Product.module.css'
 import { BiTrashAlt } from "react-icons/bi";
 
-const Product = (props) => {
+const Product = ({click,product,onDecrement,onIncrement,onChange,onDelete}) => {
     return (
-        <div className={styles.product} onClick={props.click}>
-            <p>Product name: <b>{props.product.name}</b></p>
-            <p>Product price: <b>{props.product.price}</b></p>
-            <span className={styles.quantity__value}>{props.product.quantity}</span>
-            <input className={styles.input} type="text" onChange={props.onChange} value={props.product.name }/>
-            <button className={`${styles.button} ${props.product.quantity == 1 && styles.remove}` } onClick={props.onDecrement}>
-                {props.product.quantity > 1 ? "-" : <BiTrashAlt/>}
+        <div className={styles.product} onClick={click}>
+            <p>Product name: <b>{product.name}</b></p>
+            <p>Product price: <b>{product.price}</b></p>
+            <span className={styles.quantity__value}>{product.quantity}</span>
+            <input className={styles.input} type="text" onChange={onChange} value={product.name }/>
+            <button className={`${styles.button} ${product.quantity == 1 && styles.remove}` } onClick={onDecrement}>
+                {product.quantity > 1 ? "-" : <BiTrashAlt/>}
             </button>
-            <button className={`${styles.button} ${styles.button__increment}`} onClick={props.onIncrement}>+</button>
-            <button className={styles.button} onClick={props.onDelete}>delete</button>
+            <button className={`${styles.button} ${styles.button__increment}`} onClick={onIncrement}>+</button>
+            <button className={styles.button} onClick={onDelete}>delete</button>
         </div>
     );
 }
