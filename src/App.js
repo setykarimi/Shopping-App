@@ -50,7 +50,7 @@ class App extends React.Component  {
   render(){
   return (
     <div className="container">
-     <Navbar />
+     <Navbar totalItems ={this.state.products.filter((p) => p.quantity> 0).length}/>
       <ProductList
       products={this.state.products}
       onRemove={this.removeHandler}
