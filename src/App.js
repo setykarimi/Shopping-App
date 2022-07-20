@@ -1,53 +1,65 @@
 import React, { useState } from "react"
 import './index.css'
 import ProductList from "./components/ProductList/ProductList"
-
-// class App extends React.Component {
-//    state = {
-//     products: [
-//       {title: "React.js" , price: "99$"},
-//       {title: "Js Course" , price: "89$"},
-//       {title: "Next Course" , price: "70$"}
-//     ]
-//    }
+import Navbar from "./components/Navbar/Navbar"
 
 
-//    clickHandler = () => {
-//     // setState() => to update states
-//     this.setState({
-//       products: [
-//         {title: "React.js" , price: "70$"},
-//         {title: "Js Course" , price: "69$"},
-//         {title: "Next Course" , price: "50$"}
-//       ]
-//     })
-//    }
 
-//   render() {
-//     return (
-//       <div className="container" id="title">
-//         <h1>Shopping App</h1>
-//         {this.state.products.map((product) => {
-//           return(
-//             <Product  name={product.name} 
-//               price={product.price}
-//             />
-//           )
-//         })}
-//         <button onClick={this.clickHandler}>change price</button>
-//       </div>
-//     )
-//   }
-// }
+class App extends React.Component  {
+  state = {
+    products: [
+      { id: 1, name: "React.js", price: "99$", quantity: 2 },
+      { id: 2, name: "Js Course", price: "89$", quantity: 4 },
+      { id: 3, name: "Next Course", price: "70$", quantity: 3 }
+    ]
+  } 
 
-const App = () => {
-  
+  removeHandler(id) {
+    console.log('clicked', id)
+    const filteredProducts = this.state.products.filter((product) => product.id !== id)
+    this.setState({ products: filteredProducts })
+  }
+
+  incrementhandler(id) {
+    const Products = [...this.state.products]
+    const selectedProduct = Products.find(p => p.id === id)
+    selectedProduct.quantity++;
+    this.setState({ Products })
+  }
+
+  decrementHandler(id) {
+    const Products = [...this.state.products]
+    const selectedProduct = Products.find(p => p.id === id)
+    if (selectedProduct.quantity == 1) {
+      this.removeHandler(id)
+    }
+    else {
+      selectedProduct.quantity--;
+      this.setState({ Products })
+    }
+  }
+
+  changeHandler(event, id) {
+    const Products = [...this.state.products]
+    const selectedProduct = Products.find(p => p.id === id)
+    selectedProduct.name = event.target.value;
+    this.setState({ Products })
+  }
+
+
+  render(){
   return (
     <div className="container">
-      <h1>Shopping App</h1>
-      <ProductList />
+     <Navbar />
+      <ProductList
+      products={this.state.products}
+      onRemove={this.removeHandler}
+      onIncrement={this.incrementhandler}
+      onDecrement={this.decrementHandler}
+      onChange={this.changeHandler} />
     </div>
   )
+}
 }
 
 export default App
