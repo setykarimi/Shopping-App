@@ -1,7 +1,11 @@
 import styles from './Product.module.css'
 import { BiTrashAlt } from "react-icons/bi";
+import { useEffect } from 'react';
 
 const Product = ({click,product,onDecrement,onIncrement,onChange,onDelete}) => {
+  useEffect(()=> {
+    console.log('product js useEffect');
+  },[product.quantity] )  
     return (
         <div className={styles.product} onClick={click}>
             <p>Product name: <b>{product.name}</b></p>
