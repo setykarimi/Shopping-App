@@ -1,5 +1,6 @@
 import React, { Children, useContext, useState } from "react";
-import {productsData} from '../db/db'
+import { productsData } from '../db/db'
+import _ from 'lodash'
 
 const ProductContext = React.createContext();
 const ProductContextDispatcher = React.createContext()
@@ -66,7 +67,54 @@ export const useProductsAction = () => {
         setProducts(updatedProducts)
     }
 
-    return {removeHandler , incrementhandler , decrementHandler , changeHandler}
+    const filterSizeHandler = (e) => {
+        // console.log(e.target.value);
+        if (e.value === "All") {
+            setProducts(productsData)
+        } else {
+            const updatedProducts = productsData.filter(p => p.availableSizes.indexOf(e.value) >= 0)
+
+            setProducts(updatedProducts)
+        }
+    }
+
+    const sortChangehandler = (e) => {
+        const value = e.value;
+        const products = [...productsData];
+        if (e.value === "highest") {
+            const sortedProducts = products.sort((a, b) => {
+                if (a.price < b.price) {
+                    return 1
+                }
+                if (b.price < a.price) {
+                    return -1
+                }
+                return 0
+            })
+        } else {
+            const sortedProducts = products.sort((a, b) => {
+                if (a.price > b.price) {
+                    return 1
+                }
+                if (b.price < a.price) {
+                    return -1
+                }
+                return 0
+            })
+        }
+
+
+        // if (e.value === "lowest") {
+        //     return  _.orderBy(productsItems, ['price'],['asc']);
+        //  } else {
+        //      return _.orderBy(productsItems, ['price'],['desc']);
+        //  }
+
+        setProducts(products)
+    }
+
+
+    return { removeHandler, incrementhandler, decrementHandler, changeHandler, filterSizeHandler, sortChangehandler }
 }
 
 
