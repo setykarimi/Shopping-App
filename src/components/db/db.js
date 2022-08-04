@@ -6,7 +6,8 @@ export const productsData = [
         "description": "Your perfect pack for everyday use and walks in the forest.",
         "category": "men's clothing",
         "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["X","L","XL"]
     },
     {
         "id": 2,
@@ -14,14 +15,16 @@ export const productsData = [
         "price": 22.3,
         "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket.",
         "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["XL"]
     },
     {
         "id": 3,
         "title": "Mens Cotton Jacket",
         "price": 55.99,
         "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["S"]
     },
     {
         "id": 4,
@@ -30,7 +33,8 @@ export const productsData = [
         "description": "The color could be slightly different between on the screen and in practice.",
         "category": "men's clothing",
         "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["X","L"]
     },
     {
         "id": 5,
@@ -39,7 +43,8 @@ export const productsData = [
         "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl.",
         "category": "jewelery",
         "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["L","XL"]
     },
     {
         "id": 6,
@@ -48,7 +53,8 @@ export const productsData = [
         "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez",
         "category": "jewelery",
         "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["X","XL"]
     },
     {
         "id": 7,
@@ -57,7 +63,8 @@ export const productsData = [
         "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her",
         "category": "jewelery",
         "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["X"]
     },
     {
         "id": 8,
@@ -66,7 +73,8 @@ export const productsData = [
         "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
         "category": "jewelery",
         "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["S"]
     },
     {
         "id": 9,
@@ -75,7 +83,8 @@ export const productsData = [
         "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity",
         "category": "electronics",
         "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["X","S"]
     },
     {
         "id": 10,
@@ -84,5 +93,6 @@ export const productsData = [
         "description": "Easy upgrade for faster boot up, shutdown, application load and response",
         "category": "electronics",
         "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
-        "quantity": 1
+        "quantity": 1,
+        availableSizes: ["S","X"]
     }]
