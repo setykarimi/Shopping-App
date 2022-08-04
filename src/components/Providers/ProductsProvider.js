@@ -1,14 +1,11 @@
 import React, { Children, useContext, useState } from "react";
+import {productsData} from '../db/db'
 
 const ProductContext = React.createContext();
 const ProductContextDispatcher = React.createContext()
 
 const ProductsProvider = ({ children }) => {
-    const [products, setProducts] = useState([
-        { id: 1, name: "React.js", price: "99$", quantity: 2 },
-        { id: 2, name: "Js Course", price: "89$", quantity: 4 },
-        { id: 3, name: "Next Course", price: "70$", quantity: 3 }
-    ])
+    const [products, setProducts] = useState(productsData)
 
 
     return (
