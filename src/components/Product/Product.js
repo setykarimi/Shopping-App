@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 const Product = ({click,product,onDecrement,onIncrement,onChange,onDelete}) => {
   useEffect(()=> {
-    console.log('product js useEffect');
+    // console.log('product js useEffect');
   },[product.quantity] )  
     return (
         <div className={styles.product} onClick={click}>
