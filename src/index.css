@@ -1,18 +1,18 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    font-family: 'Calibri';
+body {
+  font-family: "Lato";
+  overflow-x: hidden;
+  background: rgb(250, 250, 250);
 }
 
-.container{
-    background: rgb(240, 240, 240);
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
