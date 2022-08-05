@@ -1,0 +1,19 @@
+.searchBar{
+    display: flex;
+    align-items: center;
+    margin: 1em auto;
+}
+
+.searchBar span{
+    display: block;
+    margin-right: .5em;
+}
+
+.searchBar input{
+    padding: .7em .5em;
+    border: 1px solid #5b21b6;
+    border-radius: .5em;
+    width: 20em;
+    outline: none;
+    transition: .3s ease;
+}

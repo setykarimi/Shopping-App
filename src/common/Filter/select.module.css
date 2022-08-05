@@ -1,0 +1,13 @@
+.selectFilter {
+    display: flex;
+    align-items: center;
+}
+
+.selectFilter span{
+    margin-right: 1em;
+    display: block;
+}
+
+.selectFilter .select{
+    width: 12em;
+}
