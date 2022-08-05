@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar/Navbar"
 import Wrapper from "./components/hoc/Wrapper"
 import ProductsProvider from "./components/Providers/ProductsProvider"
 import Filter from "./components/Filter/Filter"
-import SearchBar from "./common/Search/Search"
 
 
 // class App extends React.Component {
@@ -87,7 +86,7 @@ const App = () => {
     <>
       <ProductsProvider>
         <Navbar />
-        <SearchBar />
+      
         <Filter/>
         <ProductList />
       </ProductsProvider>
