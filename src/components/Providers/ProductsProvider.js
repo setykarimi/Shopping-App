@@ -113,8 +113,17 @@ export const useProductsAction = () => {
         setProducts(products)
     }
 
+    const searchHandler = (searchText) => {
+        if (searchText === "") {
+            setProducts(productsData)
+        } else {
+            const filteredProducts = productsData.filter((p) => p.title.toLowerCase().includes(searchText.toLowerCase()))
+            setProducts(filteredProducts)
+        }
+    }
 
-    return { removeHandler, incrementhandler, decrementHandler, changeHandler, filterSizeHandler, sortChangehandler }
+
+    return { removeHandler, incrementhandler, decrementHandler, changeHandler, filterSizeHandler, sortChangehandler, searchHandler }
 }
 
 
