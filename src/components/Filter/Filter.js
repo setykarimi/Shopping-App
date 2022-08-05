@@ -2,16 +2,18 @@ import { useState } from "react";
 import { useProductsAction } from "../Providers/ProductsProvider";
 import Select from 'react-select';
 import styles from './filter.module.css'
+import SelectComponent from "../../common/Filter/Select";
+import SearchBar from "../../common/Search/Search";
 
-const Filter = () => {
-    const { filterSizeHandler , sortChangehandler} = useProductsAction();
-    const [value, setValue] = useState("")
+const Filter = ({}) => {
+    const { filterSizeHandler, sortChangehandler } = useProductsAction();
+    const [filter, setFilter] = useState("")
     const [sort, setSort] = useState("")
 
-    const ChangeHandler = (selectedOption) => {
+    const filterHandler = (selectedOption) => {
         filterSizeHandler(selectedOption)
         // sortChangehandler(sort)
-        setValue(selectedOption)
+        setFilter(selectedOption)
     }
 
     const sortHandler = (selectedOption) => {
@@ -35,28 +37,27 @@ const Filter = () => {
 
 
     return (
-        <div className={styles.filterContainer}>
-            <p>filter products based on: </p>
-            <div className={styles.selectFilter}>
-                <span>  order by:</span>
-                <Select
-                    className={styles.select}
-                    value={value}
-                    onChange={ChangeHandler}
+        <>
+            <SearchBar
+            filter={filter} />
+            <div className={styles.filterContainer}>
+                <p>filter products based on: </p>
+
+                <SelectComponent
+                    title="Order by:"
+                    value={filter}
+                    changeHandler={filterHandler}
                     options={options}
                 />
-            </div>
 
-            <div className={styles.selectFilter}>
-                <span>  sort by:</span>
-                <Select
-                    className={styles.select}
+                <SelectComponent
+                    title="Sort by:"
                     value={sort}
-                    onChange={sortHandler}
+                    changeHandler={sortHandler}
                     options={sortOptions}
                 />
             </div>
-        </div>);
+        </>);
 }
 
 export default Filter;
